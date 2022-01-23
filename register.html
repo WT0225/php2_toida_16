@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./register.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- JQuery  -->
+</head>
+<body>
+    <header>
+        <h1>New Service Shop Registration</h1>
+    </header>
+
+    <section class="info_input">
+        <form action="insert.php" method="post">
+            <dl>
+                <dt>Service shop name</dt>
+                <dd><input type="text" name="workshop_name"></dd>
+
+                <dt>email address</dt>
+                <dd><input type="text" name="email" id=""></dd>
+
+                <dt>TEL</dt>
+                <dd><input type="text" name="tel" id=""></dd>
+
+                <dt>Working time</dt>
+                <dd>
+                    Monday <input type="time" name="mon_open" id=""> ~ <input type="time" name="mon_close" id="">
+                    Tuesday <input type="time" name="tue_open" id=""> ~ <input type="time" name="tue_close" id="">
+                    Wednesday <input type="time" name="wed_open" id=""> ~ <input type="time" name="wed_close" id="">
+                    Thursday <input type="time" name="thu_open" id=""> ~ <input type="time" name="thu_close" id="">
+                    Friday <input type="time" name="fri_open" id=""> ~ <input type="time" name="fri_close" id="">
+                    Saturday <input type="time" name="sat_open" id=""> ~ <input type="time" name="sat_close" id="">
+                    Sunday <input type="time" name="sun_open" id=""> ~ <input type="time" name="sun_close" id="">
+                </dd>
+
+                <dt>Services</dt>
+                <dd>  
+                    <input type="checkbox" name="services[]" id="servicemenu" value="Battery">Battery
+                    <input type="checkbox" name="services[]" id="servicemenu" value="Engine">Engine
+                    <input type="checkbox" name="services[]" id="servicemenu" value="Air-conditioner">Air-conditioner
+                    <input type="checkbox" name="services[]" id="servicemenu" value="Car washing">Car wahshing
+                    <input type="checkbox" name="services[]" id="servicemenu" value="Drive recoder">Drive recoder
+                </dd>  
+
+                <dt>Address</dt>
+                <dd><input type="text" name="address"></dd>
+            </dl>
+            <input type="submit" value="submit">
+        </form>
+        <div id="success"></div>
+    </section>
+    
+
+
+</body>
+</html>
