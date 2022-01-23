@@ -34,7 +34,7 @@ $address=$_POST['address'];
 
 try {
     //Password:MAMP='root',XAMPP=''
-    $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','root');
+    $pdo = new PDO('mysql:dbname=wt0225_gs_db;charset=utf8;host=mysql57.wt0225.sakura.ne.jp','wt0225','Squash1996');
   } catch (PDOException $e) {
     exit('DBConnectError:'.$e->getMessage());
   }
