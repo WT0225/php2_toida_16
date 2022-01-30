@@ -9,12 +9,8 @@ $address=$_POST['address'];
 
 
 //1.  DB接続します
-try {
-  //Password:MAMP='root',XAMPP=''
-  $pdo = new PDO('mysql:dbname=wt0225_gs_db; charset=utf8;host=mysql57.wt0225.sakura.ne.jp','wt0225','Squash1996');
-} catch (PDOException $e) {
-  exit('DBConnectError:'.$e->getMessage());
-}
+require_once('function.php');
+$pdo = db_conn();
 
 //２．SQL文を用意(データ取得：SELECT) 
 $stmt = $pdo->prepare("SELECT * FROM workshop_db WHERE service LIKE '%$service%'");
@@ -26,16 +22,20 @@ $status = $stmt->execute();
 $view="";
 if($status==false) {
     //execute（SQL実行時にエラーがある場合）
-  $error = $stmt->errorInfo();
-  exit("ErrorQuery:".$error[2]);
+  sql_error($stmt);
 
 }else{
   //Selectデータの数だけ自動でループしてくれる
   //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){ 
-    $view .= "<p>";
+    $view .= '<p>';
+    $view .= '<a href="detail.php?id='.$result['id'].'">';
     $view .= $result['workshop_name'].':'.$result['service'].':'.$result['address'].' '.$result['email'].' '.$result['tel'];
-    $view .= "</p>";
+    $view .= '</a>';
+    $view .= '<button><a href="delete.php?id='.$result['id'].'">';
+    $view .= ' 削除</button>';
+    $view .= '</a>';
+    $view .= '</p>';
   }
 
 }

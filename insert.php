@@ -32,13 +32,8 @@ $address=$_POST['address'];
 
 //2. DB接続
 
-try {
-    //Password:MAMP='root',XAMPP=''
-    $pdo = new PDO('mysql:dbname=wt0225_gs_db;charset=utf8;host=mysql57.wt0225.sakura.ne.jp','wt0225','Squash1996');
-  } catch (PDOException $e) {
-    exit('DBConnectError:'.$e->getMessage());
-  }
-  
+require_once('function.php');
+$pdo = db_conn(); 
   
   //３．SQL文を用意(データ登録：INSERT)
   $stmt = $pdo->prepare(
@@ -90,11 +85,10 @@ try {
   //6．データ登録処理後
     if($status==false){
         //SQL実行時にエラーがある場合（エラーオブジェクト取得して表示）
-        $error = $stmt->errorInfo();
-        exit("ErrorMassage:".$error[2]);
+        sql_error($stmt);
     }else{
         //５．index.phpへリダイレクト
-        header('Location: register.html');//ヘッダーロケーション（リダイレクト）
+        redirect('register.html');
     }
 
 
