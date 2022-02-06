@@ -1,3 +1,13 @@
+<?php
+require_once('function.php');
+
+loginCheck();
+
+
+?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +23,7 @@
     <header>
         <h1>ORV</h1>
         <h2>On-site Repair for Vehicle</h2>
-        <!-- <button class="login">Login/New Account</button>    -->
+        <button class="login"><a href="user_login.php">Login/New Account</a></button>   
             
     </header>
     <section class="main_message">
