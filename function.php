@@ -9,10 +9,10 @@ function h($str)
 //※ DBname等、今回の授業に合わせる。
 function db_conn(){
     try {
-        $db_name = "gs_db";    //データベース名           
-        $db_id   = "root";      //アカウント名
-        $db_pw   = "root";      //パスワード：XAMPPはパスワード無しに修正してください。
-        $db_host = "localhost"; //DBホスト
+        $db_name = "wt0225_gs_db";    //データベース名           
+        $db_id   = "wt0225";      //アカウント名
+        $db_pw   = "Squash1996";      //パスワード：XAMPPはパスワード無しに修正してください。
+        $db_host = "mysql57.wt0225.sakura.ne.jp"; //DBホスト
             $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
             return $pdo;
         } catch (PDOException $e) {
