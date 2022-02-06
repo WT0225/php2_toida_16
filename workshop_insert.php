@@ -88,7 +88,7 @@ $pdo = db_conn();
         sql_error($stmt);
     }else{
         //５．index.phpへリダイレクト
-        redirect('register.html');
+        redirect('workshop_register.html');
     }
 
 

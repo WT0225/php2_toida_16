@@ -23,7 +23,7 @@ loginCheck();
     <header>
         <h1>ORV</h1>
         <h2>On-site Repair for Vehicle</h2>
-        <button class="login"><a href="user_login.php">Login/New Account</a></button>   
+        <!-- <button class="login"><a href="user_login.php">Login/New Account</a></button>    -->
             
     </header>
     <section class="main_message">

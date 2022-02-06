@@ -20,12 +20,12 @@ if($status==false){
 $val = $stmt->fetch();
 if($val['id']!= ""){
     $_SESSION['chk_ssid'] = session_id();
-    $_SESSION['kanri_flg'] = $val['admin_flg'];
+    $_SESSION['admin_flg'] = $val['admin_flg'];
     $_SESSION['name'] = $val['name'];
-    redirect('');
+    redirect('user_search.php');
 }else{
     
-    rediret('');
+    redirect('user_login.php');
 }
 
 exit();

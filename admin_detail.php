@@ -38,7 +38,7 @@ if($status == false){
     </header>
 
     <section class="info_input">
-        <form action="update.php" method="post">
+        <form action="admin_update.php" method="post">
             <dl>
                 <dt>Service shop name</dt>
                 <dd><input type="text" name="workshop_name" value="<?= $result['workshop_name']?>"></dd>

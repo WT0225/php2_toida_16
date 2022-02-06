@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="login_act.php" method="post">
+    <form action="user_login_act.php" method="post">
         ID <input type="text" name="lid" id="">
         Password <input type="password" name="lpw" id="">
         <input type="submit" value="Log in">
     </form>
+    <button><a href="user_register.html">Create New Account</a></button>
 </body>
 </html>

@@ -29,11 +29,8 @@ if($status==false) {
   //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){ 
     $view .= '<p>';
-    $view .= '<a href="detail.php?id='.$result['id'].'">';
+    $view .= '<a href="user_detail.php?id='.$result['id'].'">';
     $view .= $result['workshop_name'].':'.$result['service'].':'.$result['address'].' '.$result['email'].' '.$result['tel'];
-    $view .= '</a>';
-    $view .= '<button><a href="delete.php?id='.$result['id'].'">';
-    $view .= ' 削除</button>';
     $view .= '</a>';
     $view .= '</p>';
   }
